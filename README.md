@@ -1,6 +1,6 @@
 <div align="center">
   
-# 👋 Hey, I'm Ashbaer
+# 👋 Hey, I'm Eric
 
 [![GitHub followers](https://img.shields.io/github/followers/Ashbaer?style=for-the-badge&logo=github&logoColor=white&labelColor=1a1b27&color=38bdae)](https://github.com/Ashbaer?tab=followers)
 [![Profile Views](https://komarev.com/ghpvc/?username=Ashbaer&style=for-the-badge&color=38bdae&labelColor=1a1b27)](https://github.com/Ashbaer)
@@ -25,7 +25,7 @@ struct Developer {
 
 fn main() {
     let me = Developer {
-        name: "Ashbaer",
+        name: "Eric",
         role: "Full-stack Developer",
         languages: vec!["Rust", "TypeScript", "Python", "Kotlin"],
         current_focus: "Building Conflux 汇流 - Modern Proxy Management",
