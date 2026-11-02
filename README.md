@@ -57,13 +57,6 @@ Clients talk only to the gateway. Signed Wasm provider plugins talk to upstream 
 
 The OAuth ports only need to reach the browser used to link accounts.
 
-```sh
-ai-proxy-service serve   --config config.yaml
-ai-proxy-service migrate --config config.yaml
-ai-proxy-service oauth login --provider codex|anthropic|xai
-ai-proxy-service version
-```
-
 ### Pieces
 
 #### [ai-proxy-releases](https://github.com/veildawn/ai-proxy-releases)
@@ -122,10 +115,6 @@ Signed Wasm jobs for the gateway. The published plugin is **Ops Notifier**: mult
 
 Homebrew formula for the gateway. The release workflow regenerates it, and startup runs migrations.
 
-```sh
-brew install veildawn/tap/ai-proxy-service
-```
-
 ### Quick start
 
 **Linux, amd64 or arm64.** The script downloads a release, checks `checksums.txt`, and installs a systemd service. It generates secrets on first start. PostgreSQL has to be reachable.
@@ -134,12 +123,7 @@ brew install veildawn/tap/ai-proxy-service
 curl -fsSL https://github.com/veildawn/ai-proxy-releases/releases/latest/download/install.sh | sudo bash
 ```
 
-**Homebrew, macOS and Linux.** Files live in `$(brew --prefix)/var/ai-proxy-service`. Point `database.dsn` or `DATABASE_URL` at PostgreSQL, or MySQL 8.0.13+.
-
-```sh
-brew install veildawn/tap/ai-proxy-service
-brew services start ai-proxy-service
-```
+**Homebrew, macOS and Linux.** Install the formula from the tap above. Point `database.dsn` or `DATABASE_URL` at PostgreSQL, or MySQL 8.0.13+.
 
 **Docker Compose.** Brings its own PostgreSQL. You only pick the database password.
 
@@ -195,12 +179,11 @@ rule-providers:
 
 [![Stars](https://img.shields.io/github/stars/veildawn/homebrew-cask?style=flat-square&logo=github&labelColor=1a1b27&color=38bdae)](https://github.com/veildawn/homebrew-cask)
 
-Casks for Conflux and for Mirage, an Android device mirror and control tool powered by scrcpy.
+Casks for Conflux.
 
 ```bash
 brew tap veildawn/cask
 brew install --cask conflux
-brew install --cask mirage
 ```
 
 ### [dsh-plugins](https://github.com/veildawn/dsh-plugins)
@@ -244,7 +227,7 @@ Android project (Kotlin). The app label is Claude Mobile. It bootstraps an embed
 
 [![Stars](https://img.shields.io/github/stars/veildawn/builder?style=flat-square&logo=github&labelColor=1a1b27&color=38bdae)](https://github.com/veildawn/builder)
 
-GitHub Actions workflows for release builds. The Mirage workflow builds macOS DMGs (Intel and Apple silicon) and a Windows NSIS installer, then publishes the cask release on [homebrew-cask](https://github.com/veildawn/homebrew-cask). A second workflow builds an Android APK.
+Release build scripts.
 
 ### [Dead-Silence](https://github.com/veildawn/Dead-Silence)
 
@@ -261,9 +244,3 @@ Public notes for a 10-episode short, 《死寂边境》. The overview gives the 
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Tauri](https://img.shields.io/badge/Tauri-FFC131?style=flat-square&logo=tauri&logoColor=black)
-
-<div align="center">
-
-![Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=veildawn&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=38bdae&icon_color=38bdae)
-
-</div>

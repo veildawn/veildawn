@@ -56,13 +56,6 @@ flowchart TB
 
 OAuth 端口只需要能到达用来绑定账号的那台浏览器。
 
-```sh
-ai-proxy-service serve   --config config.yaml
-ai-proxy-service migrate --config config.yaml
-ai-proxy-service oauth login --provider codex|anthropic|xai
-ai-proxy-service version
-```
-
 ### 各部分
 
 #### [ai-proxy-releases](https://github.com/veildawn/ai-proxy-releases)
@@ -121,10 +114,6 @@ go get github.com/veildawn/ai-protocol@latest
 
 网关的 Homebrew formula。发布流程会重新生成它，启动时会跑数据库迁移。
 
-```sh
-brew install veildawn/tap/ai-proxy-service
-```
-
 ### 快速开始
 
 **Linux，amd64 或 arm64。** 脚本下载发布包，校验 `checksums.txt`，并安装 systemd 服务。密钥在首次启动时生成。需要能连上 PostgreSQL。
@@ -133,12 +122,7 @@ brew install veildawn/tap/ai-proxy-service
 curl -fsSL https://github.com/veildawn/ai-proxy-releases/releases/latest/download/install.sh | sudo bash
 ```
 
-**Homebrew，macOS 和 Linux。** 文件放在 `$(brew --prefix)/var/ai-proxy-service`。把 `database.dsn` 或 `DATABASE_URL` 指到 PostgreSQL，或 MySQL 8.0.13+。
-
-```sh
-brew install veildawn/tap/ai-proxy-service
-brew services start ai-proxy-service
-```
+**Homebrew，macOS 和 Linux。** 从上面的 tap 安装 formula。把 `database.dsn` 或 `DATABASE_URL` 指到 PostgreSQL，或 MySQL 8.0.13+。
 
 **Docker Compose。** 自带 PostgreSQL。只需要自己定数据库密码。
 
@@ -194,12 +178,11 @@ rule-providers:
 
 [![Stars](https://img.shields.io/github/stars/veildawn/homebrew-cask?style=flat-square&logo=github&labelColor=1a1b27&color=38bdae)](https://github.com/veildawn/homebrew-cask)
 
-收录 Conflux，以及 Mirage。Mirage 是基于 scrcpy 的 Android 设备镜像与控制工具。
+Conflux 的 cask。
 
 ```bash
 brew tap veildawn/cask
 brew install --cask conflux
-brew install --cask mirage
 ```
 
 ### [dsh-plugins](https://github.com/veildawn/dsh-plugins)
@@ -243,7 +226,7 @@ Android 项目（Kotlin）。应用名称是 Claude Mobile。它为 Claude CLI �
 
 [![Stars](https://img.shields.io/github/stars/veildawn/builder?style=flat-square&logo=github&labelColor=1a1b27&color=38bdae)](https://github.com/veildawn/builder)
 
-用来打发布包的 GitHub Actions 工作流。Mirage 工作流构建 macOS DMG（Intel 和 Apple 芯片）以及 Windows NSIS 安装包，然后把 cask 发布到 [homebrew-cask](https://github.com/veildawn/homebrew-cask)。另一个工作流构建 Android APK。
+发布构建脚本。
 
 ### [Dead-Silence](https://github.com/veildawn/Dead-Silence)
 
@@ -260,9 +243,3 @@ Android 项目（Kotlin）。应用名称是 Claude Mobile。它为 Claude CLI �
 ![Python](https://img.shields.io/badge/Python-3776AB?style=flat-square&logo=python&logoColor=white)
 ![Kotlin](https://img.shields.io/badge/Kotlin-7F52FF?style=flat-square&logo=kotlin&logoColor=white)
 ![Tauri](https://img.shields.io/badge/Tauri-FFC131?style=flat-square&logo=tauri&logoColor=black)
-
-<div align="center">
-
-![Stats](https://github-readme-stats-sigma-five.vercel.app/api?username=veildawn&show_icons=true&theme=tokyonight&hide_border=true&bg_color=1a1b27&title_color=38bdae&icon_color=38bdae)
-
-</div>
